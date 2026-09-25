@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches App snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h1>
+        Color Box Maker
+      </h1>
+      <form>
+        <label
+          for="width"
+        >
+          Width:
+        </label>
+        <input
+          id="width"
+          name="width"
+          value=""
+        />
+        <label
+          for="height"
+        >
+          Height:
+        </label>
+        <input
+          id="height"
+          name="height"
+          value=""
+        />
+        <label
+          for="backgroundColor"
+        >
+          Color:
+        </label>
+        <input
+          id="backgroundColor"
+          name="backgroundColor"
+          value=""
+        />
+        <button>
+          Add Box
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches Box snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      data-testid="box"
+      style="width: 100px; height: 100px; background-color: red;"
+    />
+    <button>
+      X
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches BoxList snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Color Box Maker
+    </h1>
+    <form>
+      <label
+        for="width"
+      >
+        Width:
+      </label>
+      <input
+        id="width"
+        name="width"
+        value=""
+      />
+      <label
+        for="height"
+      >
+        Height:
+      </label>
+      <input
+        id="height"
+        name="height"
+        value=""
+      />
+      <label
+        for="backgroundColor"
+      >
+        Color:
+      </label>
+      <input
+        id="backgroundColor"
+        name="backgroundColor"
+        value=""
+      />
+      <button>
+        Add Box
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches NewBoxForm snapshot 1`] = `
+<DocumentFragment>
+  <form>
+    <label
+      for="width"
+    >
+      Width:
+    </label>
+    <input
+      id="width"
+      name="width"
+      value=""
+    />
+    <label
+      for="height"
+    >
+      Height:
+    </label>
+    <input
+      id="height"
+      name="height"
+      value=""
+    />
+    <label
+      for="backgroundColor"
+    >
+      Color:
+    </label>
+    <input
+      id="backgroundColor"
+      name="backgroundColor"
+      value=""
+    />
+    <button>
+      Add Box
+    </button>
+  </form>
+</DocumentFragment>
+`;
