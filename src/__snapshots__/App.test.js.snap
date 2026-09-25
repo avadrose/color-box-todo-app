@@ -5,41 +5,20 @@ exports[`matches App snapshot 1`] = `
   <div>
     <div>
       <h1>
-        Color Box Maker
+        Todo List
       </h1>
       <form>
         <label
-          for="width"
+          for="task"
         >
-          Width:
+          Task:
         </label>
         <input
-          id="width"
-          name="width"
-          value=""
-        />
-        <label
-          for="height"
-        >
-          Height:
-        </label>
-        <input
-          id="height"
-          name="height"
-          value=""
-        />
-        <label
-          for="backgroundColor"
-        >
-          Color:
-        </label>
-        <input
-          id="backgroundColor"
-          name="backgroundColor"
+          id="task"
           value=""
         />
         <button>
-          Add Box
+          Add Todo
         </button>
       </form>
     </div>
@@ -47,13 +26,33 @@ exports[`matches App snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`matches Box snapshot 1`] = `
+exports[`matches NewTodoForm snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      data-testid="box"
-      style="width: 100px; height: 100px; background-color: red;"
+  <form>
+    <label
+      for="task"
+    >
+      Task:
+    </label>
+    <input
+      id="task"
+      value=""
     />
+    <button>
+      Add Todo
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`matches Todo snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="todo"
+  >
+    <span>
+      Walk the dogs
+    </span>
     <button>
       X
     </button>
@@ -61,87 +60,26 @@ exports[`matches Box snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`matches BoxList snapshot 1`] = `
+exports[`matches TodoList snapshot 1`] = `
 <DocumentFragment>
   <div>
     <h1>
-      Color Box Maker
+      Todo List
     </h1>
     <form>
       <label
-        for="width"
+        for="task"
       >
-        Width:
+        Task:
       </label>
       <input
-        id="width"
-        name="width"
-        value=""
-      />
-      <label
-        for="height"
-      >
-        Height:
-      </label>
-      <input
-        id="height"
-        name="height"
-        value=""
-      />
-      <label
-        for="backgroundColor"
-      >
-        Color:
-      </label>
-      <input
-        id="backgroundColor"
-        name="backgroundColor"
+        id="task"
         value=""
       />
       <button>
-        Add Box
+        Add Todo
       </button>
     </form>
   </div>
-</DocumentFragment>
-`;
-
-exports[`matches NewBoxForm snapshot 1`] = `
-<DocumentFragment>
-  <form>
-    <label
-      for="width"
-    >
-      Width:
-    </label>
-    <input
-      id="width"
-      name="width"
-      value=""
-    />
-    <label
-      for="height"
-    >
-      Height:
-    </label>
-    <input
-      id="height"
-      name="height"
-      value=""
-    />
-    <label
-      for="backgroundColor"
-    >
-      Color:
-    </label>
-    <input
-      id="backgroundColor"
-      name="backgroundColor"
-      value=""
-    />
-    <button>
-      Add Box
-    </button>
-  </form>
 </DocumentFragment>
 `;

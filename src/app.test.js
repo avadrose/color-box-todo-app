@@ -1,8 +1,118 @@
+// import { render, fireEvent } from "@testing-library/react";
+// import App from "./App.js";
+// import Box from "./Box.js";
+// import BoxList from "./BoxList.js";
+// import NewBoxForm from "./NewBoxForm.js";
+
+// it("renders App without crashing", () => {
+//   render(<App />);
+// });
+
+// it("matches App snapshot", () => {
+//   const { asFragment } = render(<App />);
+//   expect(asFragment()).toMatchSnapshot();
+// });
+
+// it("renders BoxList without crashing", () => {
+//   render(<BoxList />);
+// });
+
+// it("matches BoxList snapshot", () => {
+//   const { asFragment } = render(<BoxList />);
+//   expect(asFragment()).toMatchSnapshot();
+// });
+
+// it("renders Box without crashing", () => {
+//   render(
+//     <Box
+//       id="1"
+//       width="100"
+//       height="100"
+//       backgroundColor="red"
+//       removeBox={() => {}}
+//     />
+//   );
+// });
+
+// it("matches Box snapshot", () => {
+//   const { asFragment } = render(
+//     <Box
+//       id="1"
+//       width="100"
+//       height="100"
+//       backgroundColor="red"
+//       removeBox={() => {}}
+//     />
+//   );
+
+//   expect(asFragment()).toMatchSnapshot();
+// });
+
+// it("renders NewBoxForm without crashing", () => {
+//   render(<NewBoxForm addBox={() => {}} />);
+// });
+
+// it("matches NewBoxForm snapshot", () => {
+//   const { asFragment } = render(
+//     <NewBoxForm addBox={() => {}} />
+//   );
+
+//   expect(asFragment()).toMatchSnapshot();
+// });
+
+// it("can add a new box", () => {
+//   const { getByLabelText, getByText, getByTestId } =
+//     render(<BoxList />);
+
+//   fireEvent.change(getByLabelText("Width:"), {
+//     target: { value: "100" }
+//   });
+
+//   fireEvent.change(getByLabelText("Height:"), {
+//     target: { value: "100" }
+//   });
+
+//   fireEvent.change(getByLabelText("Color:"), {
+//     target: { value: "red" }
+//   });
+
+//   fireEvent.click(getByText("Add Box"));
+
+//   expect(getByTestId("box")).toBeInTheDocument();
+// });
+
+// it("can remove a box", () => {
+//   const { getByLabelText, getByText, queryByTestId } =
+//     render(<BoxList />);
+
+//   fireEvent.change(getByLabelText("Width:"), {
+//     target: { value: "100" }
+//   });
+
+//   fireEvent.change(getByLabelText("Height:"), {
+//     target: { value: "100" }
+//   });
+
+//   fireEvent.change(getByLabelText("Color:"), {
+//     target: { value: "blue" }
+//   });
+
+//   fireEvent.click(getByText("Add Box"));
+
+//   expect(queryByTestId("box")).toBeInTheDocument();
+
+//   fireEvent.click(getByText("X"));
+
+//   expect(queryByTestId("box")).not.toBeInTheDocument();
+// });
+
+
+
 import { render, fireEvent } from "@testing-library/react";
 import App from "./App.js";
-import Box from "./Box.js";
-import BoxList from "./BoxList.js";
-import NewBoxForm from "./NewBoxForm.js";
+import TodoList from "./TodoList.js";
+import Todo from "./Todo.js";
+import NewTodoForm from "./NewTodoForm.js";
 
 it("renders App without crashing", () => {
   render(<App />);
@@ -13,95 +123,74 @@ it("matches App snapshot", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("renders BoxList without crashing", () => {
-  render(<BoxList />);
+it("renders TodoList without crashing", () => {
+  render(<TodoList />);
 });
 
-it("matches BoxList snapshot", () => {
-  const { asFragment } = render(<BoxList />);
+it("matches TodoList snapshot", () => {
+  const { asFragment } = render(<TodoList />);
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("renders Box without crashing", () => {
+it("renders Todo without crashing", () => {
   render(
-    <Box
+    <Todo
       id="1"
-      width="100"
-      height="100"
-      backgroundColor="red"
-      removeBox={() => {}}
+      task="Walk the dogs"
+      removeTodo={() => {}}
     />
   );
 });
 
-it("matches Box snapshot", () => {
+it("matches Todo snapshot", () => {
   const { asFragment } = render(
-    <Box
+    <Todo
       id="1"
-      width="100"
-      height="100"
-      backgroundColor="red"
-      removeBox={() => {}}
+      task="Walk the dogs"
+      removeTodo={() => {}}
     />
   );
 
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("renders NewBoxForm without crashing", () => {
-  render(<NewBoxForm addBox={() => {}} />);
+it("renders NewTodoForm without crashing", () => {
+  render(<NewTodoForm addTodo={() => {}} />);
 });
 
-it("matches NewBoxForm snapshot", () => {
+it("matches NewTodoForm snapshot", () => {
   const { asFragment } = render(
-    <NewBoxForm addBox={() => {}} />
+    <NewTodoForm addTodo={() => {}} />
   );
 
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("can add a new box", () => {
-  const { getByLabelText, getByText, getByTestId } =
-    render(<BoxList />);
+it("can add a todo", () => {
+  const { getByLabelText, getByText } = render(<TodoList />);
 
-  fireEvent.change(getByLabelText("Width:"), {
-    target: { value: "100" }
+  fireEvent.change(getByLabelText("Task:"), {
+    target: { value: "Study React" }
   });
 
-  fireEvent.change(getByLabelText("Height:"), {
-    target: { value: "100" }
-  });
+  fireEvent.click(getByText("Add Todo"));
 
-  fireEvent.change(getByLabelText("Color:"), {
-    target: { value: "red" }
-  });
-
-  fireEvent.click(getByText("Add Box"));
-
-  expect(getByTestId("box")).toBeInTheDocument();
+  expect(getByText("Study React")).toBeInTheDocument();
 });
 
-it("can remove a box", () => {
-  const { getByLabelText, getByText, queryByTestId } =
-    render(<BoxList />);
+it("can remove a todo", () => {
+  const { getByLabelText, getByText, queryByText } =
+    render(<TodoList />);
 
-  fireEvent.change(getByLabelText("Width:"), {
-    target: { value: "100" }
+  fireEvent.change(getByLabelText("Task:"), {
+    target: { value: "Study React" }
   });
 
-  fireEvent.change(getByLabelText("Height:"), {
-    target: { value: "100" }
-  });
+  fireEvent.click(getByText("Add Todo"));
 
-  fireEvent.change(getByLabelText("Color:"), {
-    target: { value: "blue" }
-  });
-
-  fireEvent.click(getByText("Add Box"));
-
-  expect(queryByTestId("box")).toBeInTheDocument();
+  expect(getByText("Study React")).toBeInTheDocument();
 
   fireEvent.click(getByText("X"));
 
-  expect(queryByTestId("box")).not.toBeInTheDocument();
+  expect(queryByText("Study React")).not.toBeInTheDocument();
 });
